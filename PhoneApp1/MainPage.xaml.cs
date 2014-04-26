@@ -39,6 +39,12 @@ namespace PhoneApp1
             "Response", MessageBoxButton.OK);
         }
 
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            GeoLocation Gl = new GeoLocation();
+            Gl.DefaultLaunch();
+        }
+
         // Sample code for building a localized ApplicationBar
         //private void BuildLocalizedApplicationBar()
         //{

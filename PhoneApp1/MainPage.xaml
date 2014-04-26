@@ -9,9 +9,8 @@
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
-    Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True" Foreground="Black" Background="{StaticResource PhoneAccentBrush}">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
@@ -41,8 +40,8 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
-            <TextBlock Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}">
+            <TextBlock Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
+            <TextBlock Margin="128,-7,-22,0" Style="{StaticResource PhoneTextTitle1Style}" Height="103">
             	<Run Text="GPSGuard"/>
             	<LineBreak/>
             	<Run/>
@@ -50,12 +49,17 @@
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Button Content="Get Course and Speed&#xD;&#xA;" HorizontalAlignment="Left" Margin="90,87,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.975,0.535" Width="292" Click="Button_Click" Height="81"/>
-            <Button Content="Lat Lon" HorizontalAlignment="Left" Margin="90,173,0,0" VerticalAlignment="Top" Width="292" Height="78" Click="Button_Click_1"/>
+        <Grid x:Name="ContentPanel" Margin="0,111,-39,57" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="110*"/>
+                <ColumnDefinition Width="347*"/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Get Course and Speed&#xD;&#xA;" HorizontalAlignment="Left" Margin="90,215,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.975,0.535" Width="292" Click="Button_Click" Height="81" Grid.ColumnSpan="2"/>
+            <Button Content="Get Lat - Lon" HorizontalAlignment="Left" Margin="90,296,0,0" VerticalAlignment="Top" Width="292" Height="78" Click="Button_Click_1" Grid.ColumnSpan="2"/>
+            <Button Content="Check GPS Settings" HorizontalAlignment="Left" Margin="90,379,0,0" VerticalAlignment="Top" Click="Button_Click_2" Width="292" Grid.ColumnSpan="2"/>
+            <Image HorizontalAlignment="Left" Height="100" Margin="43,-61,0,0" VerticalAlignment="Top" Width="100" Source="/LogoToAlpha.png" Grid.ColumnSpan="2"/>
 
         </Grid>
-        <MultiScaleImage HorizontalAlignment="Left" Height="100" Margin="-93,174,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100"/>
 
         <!--Uncomment to see an alignment grid to help ensure your controls are
             aligned on common boundaries.  The image has a top margin of -32px to

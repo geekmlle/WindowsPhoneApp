@@ -55,6 +55,30 @@ namespace PhoneApp1
             }
         }
 
+        // The URI to launch
+        static string uriToLaunch = "ms-settings-location:";
 
+        // Create a Uri object from a URI string 
+        Uri uri = new Uri(uriToLaunch);
+
+        // Launch the URI
+        public async void DefaultLaunch()
+        {
+            // Launch the URI
+            var success = await Windows.System.Launcher.LaunchUriAsync(uri);
+
+            if (success)
+            {
+                // URI launched
+                System.Diagnostics.Debug.WriteLine("URI Launched");
+            }
+            else
+            {
+                // URI launch failed
+                System.Diagnostics.Debug.WriteLine("URI NOT Launched");
+            }
+        }
+
+        
     }
 }
