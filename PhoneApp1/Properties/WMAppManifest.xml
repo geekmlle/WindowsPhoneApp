@@ -16,6 +16,9 @@
     </Capabilities>
     <Tasks>
       <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
+      <ExtendedTask Name="BackgroundTask"> 
+        <BackgroundServiceAgent Specifier="ScheduledTaskAgent" Name="ScheduledTaskAgent2" Source="ScheduledTaskAgent2" Type="ScheduledTaskAgent2.ScheduledAgent" /> 
+      </ExtendedTask> 
     </Tasks>
     <Tokens>
       <PrimaryToken TokenID="PhoneApp1Token" TaskName="_default">

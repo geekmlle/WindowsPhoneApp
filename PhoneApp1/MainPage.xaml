@@ -7,13 +7,17 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    FontFamily="{StaticResource PhoneFontFamilyNormal}"
-    FontSize="{StaticResource PhoneFontSizeNormal}"
+    FontFamily="Tahoma"
+    FontSize="24"
+    Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
-    shell:SystemTray.IsVisible="True" Foreground="Black" Background="{StaticResource PhoneAccentBrush}">
-
+    shell:SystemTray.IsVisible="True" Background="#FFF1E9E9">
+    
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush Stretch="Uniform" ImageSource="/car.jpg"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -40,25 +44,35 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
-            <TextBlock Margin="128,-7,-22,0" Style="{StaticResource PhoneTextTitle1Style}" Height="103">
-            	<Run Text="GPSGuard"/>
-            	<LineBreak/>
-            	<Run/>
-            </TextBlock>
+            <TextBlock Text="Parent Guard" Margin="114,-7,61,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="#FF649B23" FontFamily="Tahoma" FontSize="48" Height="76" HorizontalAlignment="Left"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Margin="0,111,-39,57" Grid.RowSpan="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="110*"/>
-                <ColumnDefinition Width="347*"/>
-            </Grid.ColumnDefinitions>
-            <Button Content="Check GPS Settings" HorizontalAlignment="Left" Margin="97,540,0,-12" VerticalAlignment="Top" Click="Button_Click_2" Width="292" Grid.ColumnSpan="2"/>
-            <Image HorizontalAlignment="Left" Height="100" Margin="43,-61,0,0" VerticalAlignment="Top" Width="100" Source="/LogoToAlpha.png" Grid.ColumnSpan="2"/>
-            <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="91,166,0,0" VerticalAlignment="Top" Click="Button_Click_3"/>
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Image HorizontalAlignment="Left" Height="100" Margin="0,-100,0,0" VerticalAlignment="Top" Width="100" Source="/i57676249_50432_7.gif"></Image>
+            <Button x:Name="GetStartedButton" Content="Lets Get Started" HorizontalAlignment="Left" Margin="103,507,0,0" VerticalAlignment="Top" Foreground="#FF649B23" Click="GetStartedButton_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF1D7404" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
 
         </Grid>
+        <TextBlock Margin="105,153,0,0" Grid.Row="1" TextWrapping="Wrap" Text="WELCOME TO PARENT GUARD " Height="294" Width="246" Foreground="#FF649B23" FontFamily="Tahoma" VerticalAlignment="Top" HorizontalAlignment="Left" FlowDirection="LeftToRight" Padding="5,0,0,0">
+            <TextBlock.Resources>
+                <Style x:Key="WelcomePage" TargetType="TextBlock">
+                    <Setter Property="FontWeight" Value="Normal"/>
+                    <Setter Property="FontSize" Value="48"/>
+                    <Setter Property="CharacterSpacing" Value="0"/>
+                    <Setter Property="FontStyle" Value="Normal"/>
+                </Style>
+            </TextBlock.Resources>
+            <TextBlock.Style>
+                <StaticResource ResourceKey="WelcomePage"/>
+            </TextBlock.Style>
+        </TextBlock>
 
         <!--Uncomment to see an alignment grid to help ensure your controls are
             aligned on common boundaries.  The image has a top margin of -32px to

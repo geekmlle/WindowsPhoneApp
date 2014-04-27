@@ -46,7 +46,7 @@ namespace PhoneApp1
                 System.Diagnostics.Debug.WriteLine("Lat: {0}, Long: {1}",
                     coord.Latitude,
                     coord.Longitude);
-                return ("Latitude: " + coord.Latitude + ", Longitude: " + coord.Longitude);
+                return ("Lat: " + coord.Latitude + ", Long: " + coord.Longitude);
             }
             else
             {

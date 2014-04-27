@@ -17,6 +17,7 @@ namespace PhoneApp1
     public partial class MainPage : PhoneApplicationPage
     {
 
+        public String phoneNumber;
         public PhoneNumberChooserTask phoneNumberChooserTask;
 
         // Constructor
@@ -26,17 +27,16 @@ namespace PhoneApp1
             
             phoneNumberChooserTask = new PhoneNumberChooserTask();
             phoneNumberChooserTask.Completed += new EventHandler<PhoneNumberResult>(phoneNumberChooserTask_Completed);
-          
-            // Sample code to localize the ApplicationBar
-            //BuildLocalizedApplicationBar();
+
         }
 
         void phoneNumberChooserTask_Completed(object sender, PhoneNumberResult e)
         {
             if (e.TaskResult == TaskResult.OK)
             {
-                MessageBox.Show("The phone number for " + e.DisplayName + " is " + e.PhoneNumber);
-
+                MessageBox.Show("The phone number chosen is " + e.DisplayName + " with " + e.PhoneNumber);
+                phoneNumber = e.PhoneNumber;
+                
                 //Code to start a new call using the retrieved phone number.
                 //PhoneCallTask phoneCallTask = new PhoneCallTask();
                 //phoneCallTask.DisplayName = e.DisplayName;
@@ -68,38 +68,26 @@ namespace PhoneApp1
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-           // Contacts cons = new Contacts();
-
-            //Identify the method that runs after the asynchronous search completes.
-            //cons.SearchCompleted += new EventHandler<ContactsSearchEventArgs>(Contacts_SearchCompleted);
-
-            //Start the asynchronous search.
-            //cons.SearchAsync(String.Empty, FilterKind.None, "Contacts Test #1");
-            //cons.SearchAsync("A", FilterKind.DisplayName, "State String 3");
-
+          
             phoneNumberChooserTask.Show();
         }
 
         private void Contacts_SearchCompleted(object sender, ContactsSearchEventArgs e)
         {
             MessageBox.Show(e.Results.Count().ToString());
-            //MessageBox.Show(e.Results.ToString());
         }
 
-        // Sample code for building a localized ApplicationBar
-        //private void BuildLocalizedApplicationBar()
-        //{
-        //    // Set the page's ApplicationBar to a new instance of ApplicationBar.
-        //    ApplicationBar = new ApplicationBar();
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
 
-        //    // Create a new button and set the text value to the localized string from AppResources.
-        //    ApplicationBarIconButton appBarButton = new ApplicationBarIconButton(new Uri("/Assets/AppBar/appbar.add.rest.png", UriKind.Relative));
-        //    appBarButton.Text = AppResources.AppBarButtonText;
-        //    ApplicationBar.Buttons.Add(appBarButton);
+            NavigationService.Navigate(new Uri("/Page1.xaml", UriKind.Relative), phoneNumber);
+            
+        }
 
-        //    // Create a new menu item with the localized string from AppResources.
-        //    ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
-        //    ApplicationBar.MenuItems.Add(appBarMenuItem);
-        //}
+        private void GetStartedButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Contacts.xaml", UriKind.Relative));
+        }
+
     }
 }
