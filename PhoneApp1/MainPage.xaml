@@ -54,10 +54,9 @@
                 <ColumnDefinition Width="110*"/>
                 <ColumnDefinition Width="347*"/>
             </Grid.ColumnDefinitions>
-            <Button Content="Get Course and Speed&#xD;&#xA;" HorizontalAlignment="Left" Margin="90,215,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.975,0.535" Width="292" Click="Button_Click" Height="81" Grid.ColumnSpan="2"/>
-            <Button Content="Get Lat - Lon" HorizontalAlignment="Left" Margin="90,296,0,0" VerticalAlignment="Top" Width="292" Height="78" Click="Button_Click_1" Grid.ColumnSpan="2"/>
-            <Button Content="Check GPS Settings" HorizontalAlignment="Left" Margin="90,379,0,0" VerticalAlignment="Top" Click="Button_Click_2" Width="292" Grid.ColumnSpan="2"/>
+            <Button Content="Check GPS Settings" HorizontalAlignment="Left" Margin="97,540,0,-12" VerticalAlignment="Top" Click="Button_Click_2" Width="292" Grid.ColumnSpan="2"/>
             <Image HorizontalAlignment="Left" Height="100" Margin="43,-61,0,0" VerticalAlignment="Top" Width="100" Source="/LogoToAlpha.png" Grid.ColumnSpan="2"/>
+            <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="91,166,0,0" VerticalAlignment="Top" Click="Button_Click_3"/>
 
         </Grid>
 

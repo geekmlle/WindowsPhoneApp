@@ -8,20 +8,41 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using PhoneApp1.Resources;
+using Microsoft.Phone.UserData;
+using Microsoft.Phone.Tasks;
 
 
 namespace PhoneApp1
 {
     public partial class MainPage : PhoneApplicationPage
     {
+
+        public PhoneNumberChooserTask phoneNumberChooserTask;
+
         // Constructor
         public MainPage()
         {
             InitializeComponent();
+            
+            phoneNumberChooserTask = new PhoneNumberChooserTask();
+            phoneNumberChooserTask.Completed += new EventHandler<PhoneNumberResult>(phoneNumberChooserTask_Completed);
           
-
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
+        }
+
+        void phoneNumberChooserTask_Completed(object sender, PhoneNumberResult e)
+        {
+            if (e.TaskResult == TaskResult.OK)
+            {
+                MessageBox.Show("The phone number for " + e.DisplayName + " is " + e.PhoneNumber);
+
+                //Code to start a new call using the retrieved phone number.
+                //PhoneCallTask phoneCallTask = new PhoneCallTask();
+                //phoneCallTask.DisplayName = e.DisplayName;
+                //phoneCallTask.PhoneNumber = e.PhoneNumber;
+                //phoneCallTask.Show();
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -43,6 +64,26 @@ namespace PhoneApp1
         {
             GeoLocation Gl = new GeoLocation();
             Gl.DefaultLaunch();
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+           // Contacts cons = new Contacts();
+
+            //Identify the method that runs after the asynchronous search completes.
+            //cons.SearchCompleted += new EventHandler<ContactsSearchEventArgs>(Contacts_SearchCompleted);
+
+            //Start the asynchronous search.
+            //cons.SearchAsync(String.Empty, FilterKind.None, "Contacts Test #1");
+            //cons.SearchAsync("A", FilterKind.DisplayName, "State String 3");
+
+            phoneNumberChooserTask.Show();
+        }
+
+        private void Contacts_SearchCompleted(object sender, ContactsSearchEventArgs e)
+        {
+            MessageBox.Show(e.Results.Count().ToString());
+            //MessageBox.Show(e.Results.ToString());
         }
 
         // Sample code for building a localized ApplicationBar

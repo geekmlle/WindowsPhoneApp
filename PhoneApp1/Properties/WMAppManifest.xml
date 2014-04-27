@@ -2,7 +2,7 @@
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
   <App xmlns="" ProductID="{3f4dc0fe-8be1-4800-986a-d6c3fa692dda}" Title="PhoneApp1" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="PhoneApp1 author" Description="Sample description" Publisher="PhoneApp1" PublisherID="{f938f767-51e5-4960-859d-99718e4c2f2f}">
-    <IconPath IsRelative="true" IsResource="false">Logo.png</IconPath>
+    <IconPath IsRelative="true" IsResource="false">LogoToAlpha.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
       <Capability Name="ID_CAP_MEDIALIB_AUDIO" />
@@ -11,6 +11,8 @@
       <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
       <Capability Name="ID_CAP_LOCATION" />
       <Capability Name="ID_CAP_MAP" />
+      <Capability Name="ID_CAP_CONTACTS" />
+      <Capability Name="ID_CAP_APPOINTMENTS" />
     </Capabilities>
     <Tasks>
       <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
