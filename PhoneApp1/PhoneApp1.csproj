@@ -94,19 +94,16 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Extensions.cs" />
-    <Compile Include="FinalPage.xaml.cs">
-      <DependentUpon>FinalPage.xaml</DependentUpon>
+    <Compile Include="Pg3_Reached.xaml.cs">
+      <DependentUpon>Pg3_Reached.xaml</DependentUpon>
     </Compile>
     <Compile Include="GeoLocation.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page1.xaml.cs">
-      <DependentUpon>Page1.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Contacts.xaml.cs">
-      <DependentUpon>Contacts.xaml</DependentUpon>
+    <Compile Include="Pg2_Contacts.xaml.cs">
+      <DependentUpon>Pg2_Contacts.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\AppResources.Designer.cs">
@@ -114,14 +111,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="TraceSwitch.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
-    <Page Include="FinalPage.xaml">
+    <Page Include="Pg3_Reached.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -129,11 +125,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Page1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Contacts.xaml">
+    <Page Include="Pg2_Contacts.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -145,7 +137,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="3913.png" />
+    <Content Include="Images\3913.png" />
     <Content Include="Assets\AlignmentGrid.png" />
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -165,22 +157,19 @@
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="car.jpg" />
-    <Resource Include="i57676249_50432_7.gif" />
-    <Content Include="Logo.png" />
-    <Content Include="LogoToAlpha.png" />
+    <Content Include="Images\background_car.jpg" />
+    <Content Include="Images\lights.jpg" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\rearviewmirror.jpg" />
+    <Content Include="Images\road.jpg" />
+    <Content Include="Images\teen-driver.jpg" />
+    <Resource Include="Images\car.gif" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ScheduledTaskAgent2\ScheduledTaskAgent2.csproj">
-      <Project>{2A46EB74-0905-47AC-89C0-0240069D4116}</Project>
-      <Name>ScheduledTaskAgent2</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />

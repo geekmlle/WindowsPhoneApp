@@ -11,12 +11,12 @@
     FontSize="24"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
-    shell:SystemTray.IsVisible="True" Background="#FFF1E9E9">
-    
+    shell:SystemTray.IsVisible="True" >
+
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot">
         <Grid.Background>
-            <ImageBrush Stretch="Uniform" ImageSource="/car.jpg"/>
+            <ImageBrush Stretch="Uniform" ImageSource="Images/background_car.jpg"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -49,14 +49,9 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Image HorizontalAlignment="Left" Height="100" Margin="0,-100,0,0" VerticalAlignment="Top" Width="100" Source="/i57676249_50432_7.gif"></Image>
-            <Button x:Name="GetStartedButton" Content="Lets Get Started" HorizontalAlignment="Left" Margin="103,507,0,0" VerticalAlignment="Top" Foreground="#FF649B23" Click="GetStartedButton_Click">
-                <Button.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Black" Offset="0"/>
-                        <GradientStop Color="#FF1D7404" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Background>
+            <Image HorizontalAlignment="Left" Height="100" Margin="0,-100,0,0" VerticalAlignment="Top" Width="100" Source="Images/car.gif"></Image>
+            <Button x:Name="GetStartedButton" Content="Let's Get Started" HorizontalAlignment="Center" Margin="10,514,0,43" VerticalAlignment="Center" Foreground="#FF649B23" Click="GetStartedButton_Click" Width="446" Height="97">
+
             </Button>
 
         </Grid>

@@ -5,8 +5,6 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneApp1", "PhoneApp1\PhoneApp1.csproj", "{3F4DC0FE-8BE1-4800-986A-D6C3FA692DDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScheduledTaskAgent2", "ScheduledTaskAgent2\ScheduledTaskAgent2.csproj", "{2A46EB74-0905-47AC-89C0-0240069D4116}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4BA691EF-4685-4457-8973-1509F065E23B}"
 EndProject
 Global
@@ -37,18 +35,6 @@ Global
 		{3F4DC0FE-8BE1-4800-986A-D6C3FA692DDA}.Release|x86.ActiveCfg = Release|x86
 		{3F4DC0FE-8BE1-4800-986A-D6C3FA692DDA}.Release|x86.Build.0 = Release|x86
 		{3F4DC0FE-8BE1-4800-986A-D6C3FA692DDA}.Release|x86.Deploy.0 = Release|x86
-		{2A46EB74-0905-47AC-89C0-0240069D4116}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2A46EB74-0905-47AC-89C0-0240069D4116}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2A46EB74-0905-47AC-89C0-0240069D4116}.Debug|ARM.ActiveCfg = Debug|ARM
-		{2A46EB74-0905-47AC-89C0-0240069D4116}.Debug|ARM.Build.0 = Debug|ARM
-		{2A46EB74-0905-47AC-89C0-0240069D4116}.Debug|x86.ActiveCfg = Debug|x86
-		{2A46EB74-0905-47AC-89C0-0240069D4116}.Debug|x86.Build.0 = Debug|x86
-		{2A46EB74-0905-47AC-89C0-0240069D4116}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2A46EB74-0905-47AC-89C0-0240069D4116}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2A46EB74-0905-47AC-89C0-0240069D4116}.Release|ARM.ActiveCfg = Release|ARM
-		{2A46EB74-0905-47AC-89C0-0240069D4116}.Release|ARM.Build.0 = Release|ARM
-		{2A46EB74-0905-47AC-89C0-0240069D4116}.Release|x86.ActiveCfg = Release|x86
-		{2A46EB74-0905-47AC-89C0-0240069D4116}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

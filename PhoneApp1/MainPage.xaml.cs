@@ -66,27 +66,10 @@ namespace PhoneApp1
             Gl.DefaultLaunch();
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-          
-            phoneNumberChooserTask.Show();
-        }
-
-        private void Contacts_SearchCompleted(object sender, ContactsSearchEventArgs e)
-        {
-            MessageBox.Show(e.Results.Count().ToString());
-        }
-
-        private void Button_Click_4(object sender, RoutedEventArgs e)
-        {
-
-            NavigationService.Navigate(new Uri("/Page1.xaml", UriKind.Relative), phoneNumber);
-            
-        }
 
         private void GetStartedButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/Contacts.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Pg2_Contacts.xaml", UriKind.Relative));
         }
 
     }

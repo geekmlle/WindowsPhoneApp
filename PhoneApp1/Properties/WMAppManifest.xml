@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{3f4dc0fe-8be1-4800-986a-d6c3fa692dda}" Title="PhoneApp1" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="PhoneApp1 author" Description="Sample description" Publisher="PhoneApp1" PublisherID="{f938f767-51e5-4960-859d-99718e4c2f2f}">
-    <IconPath IsRelative="true" IsResource="false">LogoToAlpha.png</IconPath>
+  <App xmlns="" ProductID="{3f4dc0fe-8be1-4800-986a-d6c3fa692dda}" Title="Parent Guard" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="PhoneApp1 author" Description="Sample description" Publisher="PhoneApp1" PublisherID="{f938f767-51e5-4960-859d-99718e4c2f2f}">
+    <IconPath IsRelative="true" IsResource="false">Images\logo.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
       <Capability Name="ID_CAP_MEDIALIB_AUDIO" />
@@ -16,16 +16,16 @@
     </Capabilities>
     <Tasks>
       <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
-      <ExtendedTask Name="BackgroundTask"> 
-        <BackgroundServiceAgent Specifier="ScheduledTaskAgent" Name="ScheduledTaskAgent2" Source="ScheduledTaskAgent2" Type="ScheduledTaskAgent2.ScheduledAgent" /> 
-      </ExtendedTask> 
+      <ExtendedTask Name="BackgroundTask">
+        <BackgroundServiceAgent Specifier="ScheduledTaskAgent" Name="ScheduledTaskAgent2" Source="ScheduledTaskAgent2" Type="ScheduledTaskAgent2.ScheduledAgent" />
+      </ExtendedTask>
     </Tasks>
     <Tokens>
       <PrimaryToken TokenID="PhoneApp1Token" TaskName="_default">
         <TemplateFlip>
-          <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
+          <SmallImageURI IsRelative="true" IsResource="false">Images\logo.png</SmallImageURI>
           <Count>0</Count>
-          <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
+          <BackgroundImageURI IsRelative="true" IsResource="false">Images\logo.png</BackgroundImageURI>
           <Title>PhoneApp1</Title>
           <BackContent>
           </BackContent>
@@ -33,8 +33,7 @@
           </BackBackgroundImageURI>
           <BackTitle>
           </BackTitle>
-          <LargeBackgroundImageURI IsRelative="true" IsResource="false">
-          </LargeBackgroundImageURI>
+          <LargeBackgroundImageURI IsRelative="true" IsResource="false">Images\logo.png</LargeBackgroundImageURI>
           <LargeBackContent />
           <LargeBackBackgroundImageURI IsRelative="true" IsResource="false">
           </LargeBackBackgroundImageURI>
