@@ -16,7 +16,7 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot">
         <Grid.Background>
-            <ImageBrush Stretch="Uniform" ImageSource="Images/background_car.jpg"/>
+            <ImageBrush ImageSource="Images/background_car.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -44,28 +44,15 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="Parent Guard" Margin="114,-7,61,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="#FF649B23" FontFamily="Tahoma" FontSize="48" Height="76" HorizontalAlignment="Left"/>
+            <TextBlock Text="Parent Guard" Margin="114,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="#FF649B23" FontFamily="Tahoma" FontSize="48" Height="60" HorizontalAlignment="Left" Width="314"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+        <Grid x:Name="ContentPanel" Margin="10,95,14,3" Grid.RowSpan="2">
             <Image HorizontalAlignment="Left" Height="100" Margin="0,-100,0,0" VerticalAlignment="Top" Width="100" Source="Images/car.gif"></Image>
-            <Button x:Name="GetStartedButton" Content="Let's Get Started" HorizontalAlignment="Center" Margin="10,514,0,43" VerticalAlignment="Center" Foreground="#FF649B23" Click="GetStartedButton_Click" Width="446" Height="97">
+            <Button x:Name="GetStartedButton" Content="Let's Get Started!" HorizontalAlignment="Center" Margin="8,24,2,473" VerticalAlignment="Center" Foreground="White" Click="GetStartedButton_Click" Width="446" Height="157" Background="Black" FontSize="24">
             </Button>
         </Grid>
-        <TextBlock Margin="105,153,0,0" Grid.Row="1" TextWrapping="Wrap" Text="WELCOME TO PARENT GUARD " Height="294" Width="246" Foreground="#FF649B23" FontFamily="Tahoma" VerticalAlignment="Top" HorizontalAlignment="Left" FlowDirection="LeftToRight" Padding="5,0,0,0">
-            <TextBlock.Resources>
-                <Style x:Key="WelcomePage" TargetType="TextBlock">
-                    <Setter Property="FontWeight" Value="Normal"/>
-                    <Setter Property="FontSize" Value="48"/>
-                    <Setter Property="CharacterSpacing" Value="0"/>
-                    <Setter Property="FontStyle" Value="Normal"/>
-                </Style>
-            </TextBlock.Resources>
-            <TextBlock.Style>
-                <StaticResource ResourceKey="WelcomePage"/>
-            </TextBlock.Style>
-        </TextBlock>
 
 
 
