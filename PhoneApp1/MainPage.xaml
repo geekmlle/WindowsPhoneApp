@@ -51,9 +51,7 @@
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <Image HorizontalAlignment="Left" Height="100" Margin="0,-100,0,0" VerticalAlignment="Top" Width="100" Source="Images/car.gif"></Image>
             <Button x:Name="GetStartedButton" Content="Let's Get Started" HorizontalAlignment="Center" Margin="10,514,0,43" VerticalAlignment="Center" Foreground="#FF649B23" Click="GetStartedButton_Click" Width="446" Height="97">
-
             </Button>
-
         </Grid>
         <TextBlock Margin="105,153,0,0" Grid.Row="1" TextWrapping="Wrap" Text="WELCOME TO PARENT GUARD " Height="294" Width="246" Foreground="#FF649B23" FontFamily="Tahoma" VerticalAlignment="Top" HorizontalAlignment="Left" FlowDirection="LeftToRight" Padding="5,0,0,0">
             <TextBlock.Resources>
@@ -68,6 +66,9 @@
                 <StaticResource ResourceKey="WelcomePage"/>
             </TextBlock.Style>
         </TextBlock>
+
+
+
 
         <!--Uncomment to see an alignment grid to help ensure your controls are
             aligned on common boundaries.  The image has a top margin of -32px to

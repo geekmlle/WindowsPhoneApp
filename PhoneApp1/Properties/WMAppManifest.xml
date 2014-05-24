@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{3f4dc0fe-8be1-4800-986a-d6c3fa692dda}" Title="Parent Guard" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="PhoneApp1 author" Description="Sample description" Publisher="PhoneApp1" PublisherID="{f938f767-51e5-4960-859d-99718e4c2f2f}">
+  <App xmlns="" ProductID="{3f4dc0fe-8be1-4800-986a-d6c3fa692dda}" Title="Parent Guard" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Diana Melara" Description="Sample description" Publisher="ParentGuard" PublisherID="{f938f767-51e5-4960-859d-99718e4c2f2f}">
     <IconPath IsRelative="true" IsResource="false">Images\logo.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
@@ -26,20 +26,17 @@
           <SmallImageURI IsRelative="true" IsResource="false">Images\logo.png</SmallImageURI>
           <Count>0</Count>
           <BackgroundImageURI IsRelative="true" IsResource="false">Images\logo.png</BackgroundImageURI>
-          <Title>PhoneApp1</Title>
+          <Title>
+          </Title>
           <BackContent>
           </BackContent>
-          <BackBackgroundImageURI>
+          <BackBackgroundImageURI IsRelative="true" IsResource="false">
           </BackBackgroundImageURI>
           <BackTitle>
           </BackTitle>
-          <LargeBackgroundImageURI IsRelative="true" IsResource="false">Images\logo.png</LargeBackgroundImageURI>
-          <LargeBackContent />
-          <LargeBackBackgroundImageURI IsRelative="true" IsResource="false">
-          </LargeBackBackgroundImageURI>
-          <DeviceLockImageURI>
+          <DeviceLockImageURI IsRelative="true" IsResource="false">
           </DeviceLockImageURI>
-          <HasLarge>True</HasLarge>
+          <HasLarge>false</HasLarge>
         </TemplateFlip>
       </PrimaryToken>
     </Tokens>

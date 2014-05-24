@@ -12,6 +12,19 @@ namespace PhoneApp1
     class GeoLocation
     {
 
+        double latitude;
+        double longitude;
+
+        public double getLatitude()
+        {
+            return latitude;
+        }
+
+        public double getLongitude()
+        {
+            return longitude;
+        }
+
         public String GetLocationCourseAndSpeed()
         {
             GeoCoordinateWatcher watcher = new GeoCoordinateWatcher();
@@ -50,8 +63,36 @@ namespace PhoneApp1
             }
             else
             {
-                System.Diagnostics.Debug.WriteLine("Unknown latitude and longitude.");
-                return ("Unknown Latitude and Longitude");
+                System.Diagnostics.Debug.WriteLine("Unknown");
+                return ("Unknown");
+            }
+        }
+
+
+        public void Location()
+        {
+            GeoCoordinateWatcher watcher = new GeoCoordinateWatcher();
+
+            // Do not suppress prompt, and wait 1000 milliseconds to start.
+            watcher.TryStart(false, TimeSpan.FromMilliseconds(1000));
+
+            GeoCoordinate coord = watcher.Position.Location;
+
+            if (coord.IsUnknown != true)
+            {
+                System.Diagnostics.Debug.WriteLine("Lat: {0}, Long: {1}",
+                    coord.Latitude,
+                    coord.Longitude);
+               // return ("Lat: " + coord.Latitude + ", Long: " + coord.Longitude);
+                latitude = coord.Latitude;
+                longitude = coord.Longitude;
+
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("Unknown");
+                latitude = -1;
+                longitude = -1;
             }
         }
 

@@ -49,7 +49,17 @@ namespace PhoneApp1
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/Pg3_Reached.xaml", UriKind.Relative), phoneNumber);
+            PassParameters ps = new PassParameters();
+
+            DateTime startTime = DateTime.UtcNow;
+            ps.setInitialDate(startTime);
+
+            GeoLocation GL = new GeoLocation();
+            GL.Location();
+            ps.setInitialLatitude( GL.getLatitude() );
+            ps.setInitialLongitude( GL.getLongitude() );
+
+            NavigationService.Navigate(new Uri("/Pg3_Reached.xaml", UriKind.Relative), ps);
         }
     }
 }
