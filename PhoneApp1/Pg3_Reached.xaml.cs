@@ -8,6 +8,8 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Microsoft.Phone.Tasks;
+using System.Collections.Specialized;
+using Microsoft.Phone.Info;
 
 namespace PhoneApp1
 {
@@ -59,20 +61,60 @@ namespace PhoneApp1
             double lon1 = DegreeToRadian(ps.getInitialLongitude());
             double lon2 = DegreeToRadian(GL.getLongitude());
 
-            double dlon = lon2 - lon1;
-            double dlat = lat2 - lat1;
-            double a = Math.Pow((Math.Sin(dlat / 2)),2) + Math.Cos(lat1) * Math.Cos(lat2) * Math.Pow((Math.Sin(dlon / 2)),2);
-            double c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1 - a));
-            double distance = 3961 * c; //3961 miles = Radius of the Earth. It is equivalent to 6373 km
+            double speed;
 
-            //     miles / second
-            double speed = distance / elapsedTime.TotalHours;
+            /*
+            MessageBox.Show("1 " + lat1 + " 2 " + lon1);
+            MessageBox.Show("1 " + lat2 + " 2 " + lon2);
+            MessageBox.Show(elapsedTime.TotalHours.ToString());
+            */
 
-           // return Math.Round(speed,2);
-           // MessageBox.Show(elapsedTime.TotalHours.ToString());
+            if (Math.Round(lat1,3) == Math.Round(lat2,3) && Math.Round(lon1,3) == Math.Round(lon2,3))
+            {
+                speed = 0;
+            }
+            else { 
+
+               
+                double dlon = lon2 - lon1;
+                double dlat = lat2 - lat1;
+                double a = Math.Pow((Math.Sin(dlat / 2)),2) + Math.Cos(lat1) * Math.Cos(lat2) * Math.Pow((Math.Sin(dlon / 2)),2);
+                double c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1 - a));
+                double distance = 3961 * c; //3961 miles = Radius of the Earth. It is equivalent to 6373 km
+
+                //     miles / second
+                 speed = distance / elapsedTime.TotalHours;
+
+               // return Math.Round(speed,2);
+               // MessageBox.Show(elapsedTime.TotalHours.ToString());
+
+            }
             return speed;
             
         }
+
+
+        private void postToServer(double speed, double latitude, double longitude)
+        {
+
+            //IMEI
+            object uniqueId;
+            var hexString = string.Empty;
+            if (DeviceExtendedProperties.TryGetValue("DeviceUniqueId", out uniqueId))
+            {
+                hexString = BitConverter.ToString((byte[])uniqueId).Replace("-", string.Empty);
+            }
+
+            //POST TO SERVER
+            string URI = "http://www.example.com/post.php";
+            string myParameters = "param1=value1&param2=value2&param3=value3";
+
+            var wc = new WebClient();
+            wc.Headers[HttpRequestHeader.ContentType] = "application/x-www-form-urlencoded";
+            wc.UploadStringAsync(new Uri(URI, UriKind.Absolute), myParameters);
+
+        }
+
 
         private double DegreeToRadian(double angle)
         {
