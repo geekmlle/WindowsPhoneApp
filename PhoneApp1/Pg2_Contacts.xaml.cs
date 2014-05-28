@@ -56,6 +56,7 @@ namespace PhoneApp1
 
             GeoLocation GL = new GeoLocation();
             GL.Location();
+            ps.setPhoneNumber(phoneNumber);
             ps.setInitialLatitude( GL.getLatitude() );
             ps.setInitialLongitude( GL.getLongitude() );
 

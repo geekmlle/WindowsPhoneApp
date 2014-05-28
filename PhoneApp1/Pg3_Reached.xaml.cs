@@ -18,6 +18,10 @@ namespace PhoneApp1
         String phoneNumber = null;
         DateTime initialDate;
         PassParameters ps;
+        double lat1;
+        double lat2;
+        double lon1;
+        double lon2;
 
         public FinalPage()
         {
@@ -35,6 +39,10 @@ namespace PhoneApp1
             SMSCompose.To = phoneNumber;
 
             double speed = CalculateSpeed();
+            String initialLocation = "Lat: "+lat1+" Lon: "+lon1;
+            String finalLocation = "Lat: "+lat2+" Lon: "+lon2;
+
+            postToServer(speed,  initialLocation,  finalLocation);
 
             String location = GL.GetLocationProperty();
             
@@ -56,10 +64,10 @@ namespace PhoneApp1
             c = 2 * atan2( sqrt(a), sqrt(1-a) ) 
             d = R * c (where R is the radius of the Earth)*/
 
-            double lat1 =  DegreeToRadian(ps.getInitialLatitude());
-            double lat2 =  DegreeToRadian(GL.getLatitude());
-            double lon1 = DegreeToRadian(ps.getInitialLongitude());
-            double lon2 = DegreeToRadian(GL.getLongitude());
+            lat1 =  DegreeToRadian(ps.getInitialLatitude());
+            lat2 =  DegreeToRadian(GL.getLatitude());
+            lon1 = DegreeToRadian(ps.getInitialLongitude());
+            lon2 = DegreeToRadian(GL.getLongitude());
 
             double speed;
 
@@ -75,7 +83,6 @@ namespace PhoneApp1
             }
             else { 
 
-               
                 double dlon = lon2 - lon1;
                 double dlat = lat2 - lat1;
                 double a = Math.Pow((Math.Sin(dlat / 2)),2) + Math.Cos(lat1) * Math.Cos(lat2) * Math.Pow((Math.Sin(dlon / 2)),2);
@@ -94,7 +101,7 @@ namespace PhoneApp1
         }
 
 
-        private void postToServer(double speed, double latitude, double longitude)
+        private void postToServer(double speed, String initialLocation, String finalLocation)
         {
 
             //IMEI
@@ -105,9 +112,11 @@ namespace PhoneApp1
                 hexString = BitConverter.ToString((byte[])uniqueId).Replace("-", string.Empty);
             }
 
+           
             //POST TO SERVER
-            string URI = "http://www.example.com/post.php";
-            string myParameters = "param1=value1&param2=value2&param3=value3";
+            string URI = "http://parentguardwebapp.azurewebsites.net/DrivingData";
+
+            string myParameters = "speed=" + speed + "&initialLocation=" + initialLocation + "&finalLocation=" + finalLocation + "&IMEI=" + hexString;
 
             var wc = new WebClient();
             wc.Headers[HttpRequestHeader.ContentType] = "application/x-www-form-urlencoded";
