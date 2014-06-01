@@ -16,7 +16,7 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot">
         <Grid.Background>
-            <ImageBrush ImageSource="Images/background_car.jpg" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="Images/background_car.jpg"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -52,6 +52,7 @@
             <Image HorizontalAlignment="Left" Height="100" Margin="0,-100,0,0" VerticalAlignment="Top" Width="100" Source="Images/car.gif"></Image>
             <Button x:Name="GetStartedButton" Content="Let's Get Started!" HorizontalAlignment="Center" Margin="8,24,2,473" VerticalAlignment="Center" Foreground="White" Click="GetStartedButton_Click" Width="446" Height="157" Background="Black" FontSize="24">
             </Button>
+            <Image HorizontalAlignment="Left" Height="142" Margin="10,518,0,0" VerticalAlignment="Top" Width="177" Source="/Images/NEWLOGO.png"/>
         </Grid>
 
 

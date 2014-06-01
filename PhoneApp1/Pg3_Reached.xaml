@@ -25,13 +25,14 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
- 
+
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28"/>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Margin="14,17,10,144" Grid.RowSpan="2"/>
         <Button Content="I've arrived!&#xA;" HorizontalAlignment="Left" Margin="10,50,0,508" VerticalAlignment="Center" Height="165" Width="456" Grid.Row="1" Click="Button_Click" RenderTransformOrigin="0.493,0.901" Background="Black" Foreground="White"/>
+        <Image HorizontalAlignment="Left" Height="142" Margin="14,571,0,0" VerticalAlignment="Top" Width="177" Source="/Images/NEWLOGO.png" Grid.Row="1"/>
     </Grid>
 
 </phone:PhoneApplicationPage>

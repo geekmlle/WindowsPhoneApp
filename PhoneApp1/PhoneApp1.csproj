@@ -161,6 +161,8 @@
     <Content Include="Images\background_car.jpg" />
     <Content Include="Images\lights.jpg" />
     <Content Include="Images\logo.png" />
+    <Content Include="Images\NEWLOGO.png" />
+    <Content Include="Images\NEWLOGO_SansName.png" />
     <Content Include="Images\rearviewmirror.jpg" />
     <Content Include="Images\road.jpg" />
     <Content Include="Images\teen-driver.jpg" />

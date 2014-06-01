@@ -39,6 +39,7 @@
 
         </Grid>
         <Button Content="Start Driving!" HorizontalAlignment="Left" Margin="55,10,0,0"  VerticalAlignment="Top" Foreground="White" Height="140" Width="395" Click="Button_Click_1" Background="Black" Grid.Row="1"/>
+        <Image HorizontalAlignment="Left" Height="142" Margin="14,616,0,0" VerticalAlignment="Top" Width="177" Source="/Images/NEWLOGO.png" Grid.RowSpan="2"/>
     </Grid>
 
 </phone:PhoneApplicationPage>

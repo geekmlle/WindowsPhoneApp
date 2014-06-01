@@ -11,6 +11,8 @@ using Microsoft.Phone.Tasks;
 using System.Collections.Specialized;
 using Microsoft.Phone.Info;
 
+
+
 namespace PhoneApp1
 {
     public partial class FinalPage : PhoneApplicationPage
@@ -42,12 +44,12 @@ namespace PhoneApp1
             String initialLocation = "Lat: "+lat1+" Lon: "+lon1;
             String finalLocation = "Lat: "+lat2+" Lon: "+lon2;
 
-            postToServer(speed,  initialLocation,  finalLocation);
+            //postToServer(speed,  initialLocation,  finalLocation);
 
             String location = GL.GetLocationProperty();
             
-            SMSCompose.Body = "I have arrived safely to my destination! (Avg Speed: "+speed+"mph)";
-            
+            //SMSCompose.Body = "I have arrived safely to my destination! (Avg Speed: "+speed+"mph)";
+            SMSCompose.Body = "I have arrived safely to my destination! (Avg Speed: 10.00 mph)";
             SMSCompose.Show();
 
         }
@@ -136,3 +138,5 @@ namespace PhoneApp1
         }
     }
 }
+
+//Created by Diana Melara
