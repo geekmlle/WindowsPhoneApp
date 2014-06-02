@@ -46,10 +46,16 @@ namespace PhoneApp1
 
             //postToServer(speed,  initialLocation,  finalLocation);
 
+            if (speed >= 300 || speed<=0)
+            {
+                //Prevent inhuman speeds from showing up
+                speed = 0;
+            }
+
             String location = GL.GetLocationProperty();
             
-            //SMSCompose.Body = "I have arrived safely to my destination! (Avg Speed: "+speed+"mph)";
-            SMSCompose.Body = "I have arrived safely to my destination! (Avg Speed: 10.00 mph)";
+            SMSCompose.Body = "I have arrived safely to my destination! (Avg Speed: "+speed+"mph)";
+            //SMSCompose.Body = "I have arrived safely to my destination! (Avg Speed: 10.00 mph)";
             SMSCompose.Show();
 
         }

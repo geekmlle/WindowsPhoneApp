@@ -16,7 +16,7 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot">
         <Grid.Background>
-            <ImageBrush Stretch="Fill" ImageSource="/Images/background_car.jpg"/>
+            <ImageBrush Stretch="Fill" ImageSource="/Images/highwayimage.jpg"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -25,21 +25,30 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="Contact" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="White" FontFamily="Tahoma" FontSize="48" Height="76" HorizontalAlignment="Left"/>
-            <TextBlock Text="Choose the contact you want to notify." Style="{StaticResource PhoneTextTitle1Style}" Foreground="White" FontFamily="Tahoma" FontSize="24" Height="76" HorizontalAlignment="Left"/>
+            <TextBlock Text="Contact" Margin="10,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="#FFFBFB07" FontFamily="Tahoma" FontSize="48" Height="76" HorizontalAlignment="Left"/>
+            <TextBlock Text="Choose the contact you want to notify." Style="{StaticResource PhoneTextTitle1Style}" Foreground="#FFFBFB07" FontFamily="Tahoma" FontSize="24" Height="76" HorizontalAlignment="Left"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Margin="14,180,10,10" Grid.RowSpan="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="403*"/>
-                <ColumnDefinition Width="53*"/>
-            </Grid.ColumnDefinitions>
-            <Button Content="Search Contact" HorizontalAlignment="Left" Margin="43,-120,0,0" VerticalAlignment="Top" Foreground="#FFFBFBFB" Click="Button_Click" Width="395" Height="135" Background="Black" Grid.ColumnSpan="2"/>
-
+        <Grid x:Name="ContentPanel" Margin="12,0" Grid.Row="1">
+            <Button Content="Search Contact" HorizontalAlignment="Left" Margin="105,-34,0,0" VerticalAlignment="Top" Foreground="#FFFBFBFB" Click="Button_Click" Width="246" Height="93">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF878080" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
         </Grid>
-        <Button Content="Start Driving!" HorizontalAlignment="Left" Margin="55,10,0,0"  VerticalAlignment="Top" Foreground="White" Height="140" Width="395" Click="Button_Click_1" Background="Black" Grid.Row="1"/>
-        <Image HorizontalAlignment="Left" Height="142" Margin="14,616,0,0" VerticalAlignment="Top" Width="177" Source="/Images/NEWLOGO.png" Grid.RowSpan="2"/>
+        <Button Content="Start Driving!" HorizontalAlignment="Left" Margin="117,56,0,0"  VerticalAlignment="Top" Foreground="White" Height="93" Width="247" Click="Button_Click_1" Grid.Row="1">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF878080" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Image HorizontalAlignment="Left" Height="75" Margin="14,493,0,0" VerticalAlignment="Top" Width="84" Source="/Images/NEWLOGO.png" Grid.Row="1"/>
     </Grid>
 
 </phone:PhoneApplicationPage>

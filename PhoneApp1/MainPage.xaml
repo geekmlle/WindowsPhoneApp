@@ -16,7 +16,7 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot">
         <Grid.Background>
-            <ImageBrush ImageSource="Images/background_car.jpg"/>
+            <ImageBrush Stretch="Fill" ImageSource="/Images/highwayimage.jpg"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -44,15 +44,20 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="Parent Guard" Margin="114,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="#FF649B23" FontFamily="Tahoma" FontSize="48" Height="60" HorizontalAlignment="Left" Width="314"/>
+            <TextBlock Text="Parent Guard" Margin="88,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="#FFFBFB07" FontFamily="Tahoma" FontSize="48" Height="60" HorizontalAlignment="Left" Width="314"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Margin="10,95,14,3" Grid.RowSpan="2">
-            <Image HorizontalAlignment="Left" Height="100" Margin="0,-100,0,0" VerticalAlignment="Top" Width="100" Source="Images/car.gif"></Image>
-            <Button x:Name="GetStartedButton" Content="Let's Get Started!" HorizontalAlignment="Center" Margin="8,24,2,473" VerticalAlignment="Center" Foreground="White" Click="GetStartedButton_Click" Width="446" Height="157" Background="Black" FontSize="24">
+            <Button x:Name="GetStartedButton" Content="Let's Get Started!" HorizontalAlignment="Center" Margin="109,71,105,506" VerticalAlignment="Center" Foreground="White" Click="GetStartedButton_Click" Width="242" Height="93" FontSize="24">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF878080" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
             </Button>
-            <Image HorizontalAlignment="Left" Height="142" Margin="10,518,0,0" VerticalAlignment="Top" Width="177" Source="/Images/NEWLOGO.png"/>
+            <Image HorizontalAlignment="Left" Height="75" Margin="10,585,0,0" VerticalAlignment="Top" Width="84" Source="/Images/NEWLOGO.png"/>
         </Grid>
 
 

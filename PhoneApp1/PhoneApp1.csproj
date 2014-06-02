@@ -159,6 +159,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\background_car.jpg" />
+    <Content Include="Images\highwayimage.jpg" />
     <Content Include="Images\lights.jpg" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\NEWLOGO.png" />
